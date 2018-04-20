@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="LulzBot TAZ 6 Single" version="2018-04-19 21:16:10" app="S3D-Software 4.0.1">
+<profile name="LulzBot TAZ 6 Single" version="2018-04-19 22:56:36" app="S3D-Software 4.0.1">
   <baseProfile>LulzBot TAZ 6 Single</baseProfile>
   <printMaterial>PolyLite PLA 2.85mm</printMaterial>
   <printQuality>Medium</printQuality>
@@ -8,8 +8,8 @@
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.5</diameter>
     <autoWidth>0</autoWidth>
-    <width>0.5</width>
-    <extrusionMultiplier>1</extrusionMultiplier>
+    <width>0.6</width>
+    <extrusionMultiplier>0.9</extrusionMultiplier>
     <useRetract>1</useRetract>
     <retractionDistance>1.75</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
@@ -31,7 +31,7 @@
   <startPointOriginY>0</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>60</firstLayerHeightPercentage>
+  <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.5</firstLayerUnderspeed>
   <useRaft>0</useRaft>
@@ -230,8 +230,8 @@
       <toolheadNumber>0</toolheadNumber>
       <diameter>0.5</diameter>
       <autoWidth>0</autoWidth>
-      <width>0.5</width>
-      <extrusionMultiplier>1</extrusionMultiplier>
+      <width>0.6</width>
+      <extrusionMultiplier>0.9</extrusionMultiplier>
       <useRetract>1</useRetract>
       <retractionDistance>1.75</retractionDistance>
       <extraRestartDistance>0</extraRestartDistance>
