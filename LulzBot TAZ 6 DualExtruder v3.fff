@@ -131,7 +131,7 @@
   <fanSpeed>
     <setpoint layer="1" speed="100"/>
   </fanSpeed>
-  <blipFanToFullPower>1</blipFanToFullPower>
+  <blipFanToFullPower>0</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
   <minSpeedLayerTime>15</minSpeedLayerTime>
   <minCoolingSpeedSlowdown>20</minCoolingSpeedSlowdown>
