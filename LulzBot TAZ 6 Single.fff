@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="LulzBot TAZ 6 Single" version="2018-04-19 20:15:02" app="S3D-Software 4.0.1">
+<profile name="LulzBot TAZ 6 Single" version="2018-04-19 20:17:48" app="S3D-Software 4.0.1">
   <baseProfile>LulzBot TAZ 6 Single</baseProfile>
   <printMaterial>PolyLite PLA 2.85mm</printMaterial>
   <printQuality>Medium</printQuality>
@@ -104,7 +104,8 @@
     <setpoint layer="1" temperature="60"/>
   </temperatureController>
   <fanSpeed>
-    <setpoint layer="1" speed="100"/>
+    <setpoint layer="1" speed="0"/>
+    <setpoint layer="2" speed="100"/>
   </fanSpeed>
   <blipFanToFullPower>0</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
@@ -259,7 +260,8 @@
       <setpoint layer="1" temperature="60"/>
     </temperatureController>
     <fanSpeed>
-      <setpoint layer="1" speed="100"/>
+      <setpoint layer="1" speed="0"/>
+      <setpoint layer="2" speed="100"/>
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureMaterial name="HatchBox PLA 1.75mm">
