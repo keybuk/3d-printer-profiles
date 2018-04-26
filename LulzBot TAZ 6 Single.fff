@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="LulzBot TAZ 6 Single" version="2018-04-24 18:09:53" app="S3D-Software 4.0.1">
+<profile name="LulzBot TAZ 6 Single" version="2018-04-25 21:16:58" app="S3D-Software 4.0.1">
   <baseProfile>LulzBot TAZ 6 Single</baseProfile>
   <printMaterial>PolyLite PLA 2.85mm</printMaterial>
   <printQuality>Medium</printQuality>
@@ -151,7 +151,7 @@
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
-  <endingGcode>M400			; wait for moves to finish,M140 S45			; start bed cooling to part removal temperature,M104 S0			; hotend off,M107			; fans off,G91			; relative positioning,G1 E-1 F300			; retract the filament a bit before lifting the nozzle to release some of the pressure,G1 Z20 E-5 X-20 Y-20 F3000	; move Z up a bit and retract filament even more,G1 E6			; re-prime extruder,M117 Cooling...		; progress indicator message on LCD,G90			; absolute positioning,G1 Y0 F3000			; move to cooling position,M190 R45			; wait for bed to cool down to removal temp,G1 Y280 F3000		; present finished print,M140 S45			; keep temperature or cool downs,M84			; disable steppers,G90			; absolute positioning,M117 Print complete    		; progress indicator message,</endingGcode>
+  <endingGcode>M400			; wait for moves to finish,M140 S45			; start bed cooling to part removal temperature,M104 S0			; hotend off,M107			; fans off,G91			; relative positioning,G1 E-1 F600			; retract the filament a bit before lifting the nozzle to release some of the pressure,G1 Z20 E-5 X-20 Y-20 F3000	; move Z up a bit and retract filament even more,G1 E6			; re-prime extruder,M117 Cooling...		; progress indicator message on LCD,G90			; absolute positioning,G1 Y0 F3000			; move to cooling position,M190 R45			; wait for bed to cool down to removal temp,G1 Y280 F3000		; present finished print,M140 S45			; keep temperature or cool downs,M84			; disable steppers,G90			; absolute positioning,M117 Print complete    		; progress indicator message,</endingGcode>
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
