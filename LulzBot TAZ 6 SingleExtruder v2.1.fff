@@ -1,64 +1,27 @@
 <?xml version="1.0"?>
+<!-- Simplify3D FFF profile for LulzBot TAZ 6 with SingleExtruder v2.1 tool head.
+
+     https://forum.simplify3d.com/viewtopic.php?f=8&t=9893
+  -->
 <profile name="LulzBot TAZ 6 SingleExtruder v2.1" version="2018-05-03 19:20:55" app="S3D-Software 4.0.1">
   <baseProfile>LulzBot TAZ 6 SingleExtruder v2.1</baseProfile>
   <printMaterial>PolyLite PLA 2.85mm</printMaterial>
   <printQuality>Medium</printQuality>
   <printExtruders>0.5mm</printExtruders>
 
-  <!-- SingleExtruder v2.1 with a 0.5mm Nozzle -->
-  <autoConfigureExtruders name="0.5mm" allowedToolheads="1">
-    <primaryExtruder>0</primaryExtruder>
-    <raftExtruder>0</raftExtruder>
-    <skirtExtruder>0</skirtExtruder>
-    <infillExtruder>0</infillExtruder>
-    <supportExtruder>0</supportExtruder>
-    <denseSupportExtruder>0</denseSupportExtruder>
+  <!-- Print bed model -->
+  <overridePrinterModels>1</overridePrinterModels>
+  <printerModelsOverride>LulzBot_TAZ6.stl</printerModelsOverride>
 
-    <extruder name="Primary Extruder">
-      <toolheadNumber>0</toolheadNumber>
-      <diameter>0.5</diameter>
-      <autoWidth>0</autoWidth>
-      <width>0.5</width>
-      <extrusionMultiplier>0.86</extrusionMultiplier>
-      <useRetract>1</useRetract>
-      <retractionDistance>1.75</retractionDistance>
-      <extraRestartDistance>0</extraRestartDistance>
-      <retractionZLift>0</retractionZLift>
-      <retractionSpeed>600</retractionSpeed>
-      <useCoasting>0</useCoasting>
-      <coastingDistance>0.2</coastingDistance>
-      <useWipe>0</useWipe>
-      <wipeDistance>5</wipeDistance>
-    </extruder>
-  </autoConfigureExtruders>
+  <!-- Material Profiles
 
-  <!-- SingleExtruder v2.1 with a 0.35mm Nozzle -->
-  <autoConfigureExtruders name="0.35mm" allowedToolheads="1">
-    <primaryExtruder>0</primaryExtruder>
-    <raftExtruder>0</raftExtruder>
-    <skirtExtruder>0</skirtExtruder>
-    <infillExtruder>0</infillExtruder>
-    <supportExtruder>0</supportExtruder>
-    <denseSupportExtruder>0</denseSupportExtruder>
+       Selecting a material profile overrides each of the values specified
+       within it, but only those. It's thus important that all materials
+       specify all of the same values.
 
-    <extruder name="Primary Extruder">
-      <toolheadNumber>0</toolheadNumber>
-      <diameter>0.35</diameter>
-      <autoWidth>0</autoWidth>
-      <width>0.35</width>
-      <extrusionMultiplier>1.0</extrusionMultiplier>
-      <useRetract>1</useRetract>
-      <retractionDistance>1.75</retractionDistance>
-      <extraRestartDistance>0</extraRestartDistance>
-      <retractionZLift>0</retractionZLift>
-      <retractionSpeed>600</retractionSpeed>
-      <useCoasting>0</useCoasting>
-      <coastingDistance>0.2</coastingDistance>
-      <useWipe>0</useWipe>
-      <wipeDistance>5</wipeDistance>
-    </extruder>
-  </autoConfigureExtruders>
-
+       In the tab sections below, per-material values are taken from the
+       current printMaterial.
+    -->
   <!-- PolyLite PLA 2.85mm -->
   <autoConfigureMaterial name="PolyLite PLA 2.85mm">
     <filamentDiameters>2.85|2.85|2.85|2.85|2.85|2.85</filamentDiameters>
@@ -177,6 +140,15 @@
     </fanSpeed>
   </autoConfigureMaterial>
 
+  <!-- Quality Profiles
+
+       Selecting a quality profile overrides each of the values specified
+       within it, but only those. It's thus important that all qualities
+       specify all of the same values.
+
+       In the tab sections below, per-quality are taken from the
+       current printQuality.
+    -->
   <autoConfigureQuality name="Fast">
     <layerHeight>0.38</layerHeight>
     <topSolidLayers>4</topSolidLayers>
@@ -205,7 +177,79 @@
     <supportInfillPercentage>40</supportInfillPercentage>
   </autoConfigureQuality>
 
-  <!-- Primary Extruder copied from the SingleExtruder v2.1 0.5mm profile -->
+  <!-- Extruder Profiles
+
+       Since I have both a 0.5mm and 0.35mm nozzle, use the extruder profiles
+       to select between them.
+
+       Selecting an extruder profile overrides each of the values specified
+       within it, but only those. It's thus important that all extruders
+       specify all of the same values.
+
+       In the tab sections below, per-extruder are taken from the
+       current printExtruder.
+    -->
+  <!-- SingleExtruder v2.1 with a 0.5mm Nozzle -->
+  <autoConfigureExtruders name="0.5mm" allowedToolheads="1">
+    <primaryExtruder>0</primaryExtruder>
+    <raftExtruder>0</raftExtruder>
+    <skirtExtruder>0</skirtExtruder>
+    <infillExtruder>0</infillExtruder>
+    <supportExtruder>0</supportExtruder>
+    <denseSupportExtruder>0</denseSupportExtruder>
+
+    <extruder name="Primary Extruder">
+      <toolheadNumber>0</toolheadNumber>
+      <diameter>0.5</diameter>
+      <autoWidth>0</autoWidth>
+      <width>0.5</width>
+      <extrusionMultiplier>0.86</extrusionMultiplier>
+      <useRetract>1</useRetract>
+      <retractionDistance>1.75</retractionDistance>
+      <extraRestartDistance>0</extraRestartDistance>
+      <retractionZLift>0</retractionZLift>
+      <retractionSpeed>600</retractionSpeed>
+      <useCoasting>0</useCoasting>
+      <coastingDistance>0.2</coastingDistance>
+      <useWipe>0</useWipe>
+      <wipeDistance>5</wipeDistance>
+    </extruder>
+  </autoConfigureExtruders>
+
+  <!-- SingleExtruder v2.1 with a 0.35mm Nozzle -->
+  <autoConfigureExtruders name="0.35mm" allowedToolheads="1">
+    <primaryExtruder>0</primaryExtruder>
+    <raftExtruder>0</raftExtruder>
+    <skirtExtruder>0</skirtExtruder>
+    <infillExtruder>0</infillExtruder>
+    <supportExtruder>0</supportExtruder>
+    <denseSupportExtruder>0</denseSupportExtruder>
+
+    <extruder name="Primary Extruder">
+      <toolheadNumber>0</toolheadNumber>
+      <diameter>0.35</diameter>
+      <autoWidth>0</autoWidth>
+      <width>0.35</width>
+      <extrusionMultiplier>1.0</extrusionMultiplier>
+      <useRetract>1</useRetract>
+      <retractionDistance>1.75</retractionDistance>
+      <extraRestartDistance>0</extraRestartDistance>
+      <retractionZLift>0</retractionZLift>
+      <retractionSpeed>600</retractionSpeed>
+      <useCoasting>0</useCoasting>
+      <coastingDistance>0.2</coastingDistance>
+      <useWipe>0</useWipe>
+      <wipeDistance>5</wipeDistance>
+    </extruder>
+  </autoConfigureExtruders>
+
+  <!-- Extruder Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=1980
+
+       Per-extruder:
+         extruder
+    -->
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.5</diameter>
@@ -223,7 +267,142 @@
     <wipeDistance>5</wipeDistance>
   </extruder>
 
-  <!-- Primary Extruder Temperature Controller copied from PolyLite PLA 2.85mm -->
+  <!-- Layer Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=1941
+
+       Per-quality:
+         layerHeight
+         topSolidLayers
+         bottomSolidLayers
+         perimeterOutlines
+
+       Per-extruder:
+         primaryExtruder
+    -->
+  <primaryExtruder>0</primaryExtruder>
+  <layerHeight>0.25</layerHeight>
+  <topSolidLayers>4</topSolidLayers>
+  <bottomSolidLayers>4</bottomSolidLayers>
+  <perimeterOutlines>2</perimeterOutlines>
+  <printPerimetersInsideOut>1</printPerimetersInsideOut>
+  <sequentialIslands>0</sequentialIslands>
+  <spiralVaseMode>0</spiralVaseMode>
+
+  <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
+  <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
+  <firstLayerUnderspeed>0.5</firstLayerUnderspeed>
+
+  <startPointOption>2</startPointOption>
+  <startPointOriginX>0</startPointOriginX>
+  <startPointOriginY>0</startPointOriginY>
+
+  <!-- Additions Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=2100
+
+       Per-quality:
+         skirtLayers
+
+       Per-extruder:
+         raftExtruder
+         skirtExtruder
+         primePillarExtruder
+         oozeShieldExtruder
+    -->
+  <useSkirt>1</useSkirt>
+  <skirtExtruder>0</skirtExtruder>
+  <skirtLayers>1</skirtLayers>
+  <skirtOffset>4</skirtOffset>
+  <skirtOutlines>2</skirtOutlines>
+
+  <useRaft>0</useRaft>
+  <raftExtruder>0</raftExtruder>
+  <raftTopLayers>3</raftTopLayers>
+  <raftBaseLayers>2</raftBaseLayers>
+  <raftOffset>3</raftOffset>
+  <raftSeparationDistance>0.14</raftSeparationDistance>
+  <raftTopInfill>100</raftTopInfill>
+  <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
+
+  <usePrimePillar>0</usePrimePillar>
+  <primePillarExtruder>999</primePillarExtruder>
+  <primePillarWidth>12</primePillarWidth>
+  <primePillarLocation>7</primePillarLocation>
+  <primePillarSpeedMultiplier>1</primePillarSpeedMultiplier>
+
+  <useOozeShield>0</useOozeShield>
+  <oozeShieldExtruder>999</oozeShieldExtruder>
+  <oozeShieldOffset>2</oozeShieldOffset>
+  <oozeShieldOutlines>1</oozeShieldOutlines>
+  <oozeShieldSidewallShape>1</oozeShieldSidewallShape>
+  <oozeShieldSidewallAngle>30</oozeShieldSidewallAngle>
+  <oozeShieldSpeedMultiplier>1</oozeShieldSpeedMultiplier>
+
+  <!-- Infill Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=1953
+
+       Per-material:
+         infillPercentage
+
+       Per-extruder:
+         infillExtruder
+    -->
+  <infillExtruder>0</infillExtruder>
+  <internalInfillPattern>Rectilinear</internalInfillPattern>
+  <externalInfillPattern>Rectilinear</externalInfillPattern>
+  <infillPercentage>20</infillPercentage>
+  <outlineOverlapPercentage>15</outlineOverlapPercentage>
+  <infillExtrusionWidthPercentage>200</infillExtrusionWidthPercentage>
+  <minInfillLength>5</minInfillLength>
+  <infillLayerInterval>1</infillLayerInterval>
+  <useDiaphragm>0</useDiaphragm>
+  <diaphragmLayerInterval>20</diaphragmLayerInterval>
+
+  <internalInfillAngles>45,-45</internalInfillAngles>
+  <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
+  <externalInfillAngles>45,-45</externalInfillAngles>
+
+  <!-- Support Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=2135
+
+       Per-material:
+         supportInfillPercentage
+
+       Per-extruder:
+         supportExtruder
+         denseSupportExtruder
+    -->
+  <generateSupport>0</generateSupport>
+  <supportExtruder>0</supportExtruder>
+  <supportInfillPercentage>30</supportInfillPercentage>
+  <supportExtraInflation>0</supportExtraInflation>
+  <supportBaseLayers>0</supportBaseLayers>
+  <supportLayerInterval>1</supportLayerInterval>
+
+  <denseSupportExtruder>0</denseSupportExtruder>
+  <denseSupportLayers>0</denseSupportLayers>
+  <denseSupportInfillPercentage>70</denseSupportInfillPercentage>
+
+  <supportType>0</supportType>
+  <supportGridSpacing>4</supportGridSpacing>
+  <maxOverhangAngle>45</maxOverhangAngle>
+
+  <supportHorizontalPartOffset>0.3</supportHorizontalPartOffset>
+  <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
+  <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
+
+  <supportAngles>0</supportAngles>
+
+  <!-- Temperature Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=2365
+
+       Per-material:
+         temperatureController
+    -->
   <temperatureController name="Primary Extruder">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
@@ -234,7 +413,6 @@
     <setpoint layer="2" temperature="210"/>
   </temperatureController>
 
-  <!-- Heated Bed Temperature Controller copied from PolyLite PLA 2.85mm -->
   <temperatureController name="Heated Bed">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>1</isHeatedBed>
@@ -244,87 +422,30 @@
     <setpoint layer="1" temperature="60"/>
   </temperatureController>
 
-  <!-- Cooling copied from PolyLite PLA 2.85mm -->
+  <!-- Cooling Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=2364
+
+       Per-material:
+         fanSpeed
+    -->
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
     <setpoint layer="2" speed="100"/>
   </fanSpeed>
 
-  <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.25</layerHeight>
-  <topSolidLayers>4</topSolidLayers>
-  <bottomSolidLayers>4</bottomSolidLayers>
-  <perimeterOutlines>2</perimeterOutlines>
-  <printPerimetersInsideOut>1</printPerimetersInsideOut>
-  <startPointOption>2</startPointOption>
-  <startPointOriginX>0</startPointOriginX>
-  <startPointOriginY>0</startPointOriginY>
-  <sequentialIslands>0</sequentialIslands>
-  <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
-  <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
-  <firstLayerUnderspeed>0.5</firstLayerUnderspeed>
-  <useRaft>0</useRaft>
-  <raftExtruder>0</raftExtruder>
-  <raftTopLayers>3</raftTopLayers>
-  <raftBaseLayers>2</raftBaseLayers>
-  <raftOffset>3</raftOffset>
-  <raftSeparationDistance>0.14</raftSeparationDistance>
-  <raftTopInfill>100</raftTopInfill>
-  <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
-  <useSkirt>1</useSkirt>
-  <skirtExtruder>0</skirtExtruder>
-  <skirtLayers>1</skirtLayers>
-  <skirtOutlines>2</skirtOutlines>
-  <skirtOffset>4</skirtOffset>
-  <usePrimePillar>0</usePrimePillar>
-  <primePillarExtruder>999</primePillarExtruder>
-  <primePillarWidth>12</primePillarWidth>
-  <primePillarLocation>7</primePillarLocation>
-  <primePillarSpeedMultiplier>1</primePillarSpeedMultiplier>
-  <useOozeShield>0</useOozeShield>
-  <oozeShieldExtruder>999</oozeShieldExtruder>
-  <oozeShieldOffset>2</oozeShieldOffset>
-  <oozeShieldOutlines>1</oozeShieldOutlines>
-  <oozeShieldSidewallShape>1</oozeShieldSidewallShape>
-  <oozeShieldSidewallAngle>30</oozeShieldSidewallAngle>
-  <oozeShieldSpeedMultiplier>1</oozeShieldSpeedMultiplier>
-  <infillExtruder>0</infillExtruder>
-  <internalInfillPattern>Rectilinear</internalInfillPattern>
-  <externalInfillPattern>Rectilinear</externalInfillPattern>
-  <infillPercentage>20</infillPercentage>
-  <outlineOverlapPercentage>15</outlineOverlapPercentage>
-  <infillExtrusionWidthPercentage>200</infillExtrusionWidthPercentage>
-  <minInfillLength>5</minInfillLength>
-  <infillLayerInterval>1</infillLayerInterval>
-  <internalInfillAngles>45,-45</internalInfillAngles>
-  <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
-  <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>0</generateSupport>
-  <supportExtruder>0</supportExtruder>
-  <supportInfillPercentage>30</supportInfillPercentage>
-  <supportExtraInflation>0</supportExtraInflation>
-  <supportBaseLayers>0</supportBaseLayers>
-  <denseSupportExtruder>0</denseSupportExtruder>
-  <denseSupportLayers>0</denseSupportLayers>
-  <denseSupportInfillPercentage>70</denseSupportInfillPercentage>
-  <supportLayerInterval>1</supportLayerInterval>
-  <supportHorizontalPartOffset>0.3</supportHorizontalPartOffset>
-  <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
-  <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
-  <supportType>0</supportType>
-  <supportGridSpacing>4</supportGridSpacing>
-  <maxOverhangAngle>45</maxOverhangAngle>
-  <supportAngles>0</supportAngles>
   <blipFanToFullPower>0</blipFanToFullPower>
-  <adjustSpeedForCooling>1</adjustSpeedForCooling>
-  <minSpeedLayerTime>15</minSpeedLayerTime>
-  <minCoolingSpeedSlowdown>20</minCoolingSpeedSlowdown>
+
   <increaseFanForCooling>0</increaseFanForCooling>
   <minFanLayerTime>45</minFanLayerTime>
   <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
   <increaseFanForBridging>0</increaseFanForBridging>
   <bridgingFanSpeed>100</bridgingFanSpeed>
+
+  <!-- G-Code Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=2366
+    -->
   <use5D>1</use5D>
   <relativeEdistances>0</relativeEdistances>
   <allowEaxisZeroing>1</allowEaxisZeroing>
@@ -332,9 +453,11 @@
   <includeM10123>0</includeM10123>
   <stickySupport>1</stickySupport>
   <applyToolheadOffsets>0</applyToolheadOffsets>
+
   <gcodeXoffset>0</gcodeXoffset>
   <gcodeYoffset>0</gcodeYoffset>
   <gcodeZoffset>0</gcodeZoffset>
+  
   <overrideMachineDefinition>1</overrideMachineDefinition>
   <machineTypeOverride>0</machineTypeOverride>
   <strokeXoverride>280</strokeXoverride>
@@ -350,27 +473,63 @@
   <flipYoverride>-1</flipYoverride>
   <flipZoverride>1</flipZoverride>
   <toolheadOffsets>0,0|0,0|0,0|0,0|0,0|0,0</toolheadOffsets>
+
   <overrideFirmwareConfiguration>1</overrideFirmwareConfiguration>
   <firmwareTypeOverride>RepRap (Marlin/Repetier/Sprinter)</firmwareTypeOverride>
   <GPXconfigOverride>r2</GPXconfigOverride>
   <baudRateOverride>250000</baudRateOverride>
-  <overridePrinterModels>1</overridePrinterModels>
-  <printerModelsOverride>LulzBot_TAZ6.stl</printerModelsOverride>
+
+  <!-- Scripts Tab
+  
+       https://forum.simplify3d.com/viewtopic.php?t=1959
+
+       The start and end gcode are intended to apply to all materials and
+       nozzle-sizes, since Simplify3D doesn't give us enough variables, we
+       make up our own like [thing] and use {REPLACE "[thing]" "..."} in the
+       postProcessing script to apply the per-material values.
+
+       Per-material:
+         postProcessing
+    -->
   <startingGcode>; LulzBot TAZ 6 with DualExtruder v3,; Initialization and Homing,G26       ; clear potential 'probe fail' condition,G21      ; set units to Millimetres,M107     ; disable fans,G90      ; absolute positioning,T0     ; make sure we're on the first extruder,M104 S[extruder0_soften_temperature]  ; soften filament,M140 S[bed0_temperature]  ; start bed heating up,G28 XY     ; home X and Y,G1 X-17 F3000    ; clear X endstop,G1 Y258 F3000   ; move over the Z_MIN switch,G1 X-19 F3000    ; move left as far as possible,M117 Heating...    ; LCD status message,M109 R[extruder0_soften_temperature] ; wait for soften temp,M82      ; set extruder to absolute mode,G92 E0      ; set extruder to zero,G1 E-12 F100   ; retract filament,G28 Z      ; home Z,;,; Wiping (filament already softened above),;,M109 R[extruder0_wipe_temperature]  ; wait for extruder to reach wiping temp,G1 X-15 Y100 F3000   ; move above wiper pad,G1 Z1      ; push nozzle into wiper,G1 X-17 Y95 F1000    ; slow wipe,G1 X-17 Y90 F1000   ; slow wipe,G1 X-17 Y85 F1000   ; slow wipe,G1 X-15 Y90 F1000   ; slow wipe,G1 X-17 Y80 F1000   ; slow wipe,G1 X-15 Y95 F1000   ; slow wipe,G1 X-17 Y75 F2000   ; fast wipe,G1 X-15 Y65 F2000   ; fast wipe,G1 X-17 Y70 F2000   ; fast wipe,G1 X-15 Y60 F2000   ; fast wipe,G1 X-17 Y55 F2000   ; fast wipe,G1 X-15 Y50 F2000   ; fast wipe,G1 X-17 Y40 F2000   ; fast wipe,G1 X-15 Y45 F2000   ; fast wipe,G1 X-17 Y35 F2000   ; fast wipe,G1 X-15 Y40 F2000   ; fast wipe,G1 X-17 Y70 F2000   ; fast wipe,G1 X-15 Y30 Z2 F2000    ; fast wipe,G1 X-17 Y35 F2000   ; fast wipe,G1 X-15 Y25 F2000   ; fast wipe,G1 X-17 Y30 F2000   ; fast wipe,G1 X-15 Y25 Z1.5 F1000    ; slow wipe,G1 X-17 Y23 F1000   ; slow wipe,G1 Z10      ; raise extruder,;,; Auto-leveling,;,M109 R[extruder0_probe_temperature]  ; wait for extruder to reach probe temp,G1 X-9 Y-9      ; move above first probe point,M204 S100      ; set probing acceleration,G29      ; start auto-leveling sequence,M204 S500      ; restore standard acceleration,;,; Prepare for printing,;,G1 X100 Z0.5 F3000   ; heat off the bed and shear any excess filament on our first move,M117 Heating...    ; progress indicator message on LCD,M104 S[extruder0_temperature] ; start heading extruder,M190 S[bed0_temperature] ; wait for bed to reach printing temp,M109 R[extruder0_temperature] ; wait for extruder to reach printing temp,M106 S[fan_speed_pwm]    ; set the fan to first layer speed,G1 E0 F100     ; undo earlier retraction,M400      ; clear buffer,M117 TAZ 6 Printing    ; progress indicator message on LCD,</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
   <endingGcode>M400     ; wait for moves to finish,M140 S[bed0_removal_temperature] ; start bed cooling to part removal temperature,M104 S0     ; hotend off,M107     ; fans off,G91      ; relative positioning,G1 E-1 F300      ; retract the filament a bit before lifting the nozzle to release some of the pressure,G1 Z20 E-5 X-20 Y-20 F3000 ; move Z up a bit and retract filament even more,G1 E6      ; re-prime extruder,M117 Cooling...   ; progress indicator message on LCD,G90     ; absolute positioning,G1 Y0 F3000      ; move to cooling position,M190 R[bed0_removal_temperature] ; wait for bed to cool down to removal temp,G1 Y280 F3000   ; present finished print,M140 S[bed0_keep_temperature]  ; keep temperature or cool downs,M84      ; disable steppers,G90      ; absolute positioning,M117 Print complete        ; progress indicator message,</endingGcode>
+
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
+  
   <postProcessing>{REPLACE &quot;[extruder0_soften_temperature]&quot; &quot;185&quot;},{REPLACE &quot;[extruder0_wipe_temperature]&quot; &quot;170&quot;},{REPLACE &quot;[extruder0_probe_temperature]&quot; &quot;170&quot;},{REPLACE &quot;[bed0_removal_temperature]&quot; &quot;45&quot;},{REPLACE &quot;[bed0_keep_temperature]&quot; &quot;45&quot;}</postProcessing>
+
+  <!-- Speeds Tab
+
+       https://forum.simplify3d.com/viewtopic.php?f=8&t=2363
+
+       Per-quality:
+         defaultSpeed
+    -->
   <defaultSpeed>3600</defaultSpeed>
   <outlineUnderspeed>0.5</outlineUnderspeed>
   <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
   <supportUnderspeed>0.8</supportUnderspeed>
   <rapidXYspeed>10500</rapidXYspeed>
   <rapidZspeed>1002</rapidZspeed>
+
+  <adjustSpeedForCooling>1</adjustSpeedForCooling>
+  <minSpeedLayerTime>15</minSpeedLayerTime>
+  <minCoolingSpeedSlowdown>20</minCoolingSpeedSlowdown>
+
+  <!-- Other Tab
+
+       https://forum.simplify3d.com/viewtopic.php?f=8&t=2363
+
+       Per-material:
+         filamentDiameters
+         filamentPricesPerKg
+         filamentDensities
+    -->
   <minBridgingArea>50</minBridgingArea>
   <bridgingExtraInflation>0</bridgingExtraInflation>
   <bridgingExtrusionMultiplier>1</bridgingExtrusionMultiplier>
@@ -378,34 +537,45 @@
   <useFixedBridgingAngle>0</useFixedBridgingAngle>
   <fixedBridgingAngle>0</fixedBridgingAngle>
   <applyBridgingToPerimeters>0</applyBridgingToPerimeters>
+
+  <horizontalSizeCompensation>0</horizontalSizeCompensation>
+
   <filamentDiameters>2.85|2.85|2.85|2.85|2.85|2.85</filamentDiameters>
   <filamentPricesPerKg>25|25|25|25|25|25</filamentPricesPerKg>
   <filamentDensities>1.25|1.25|1.25|1.25|1.25|1.25</filamentDensities>
+
+  <toolChangeRetractionDistance>16</toolChangeRetractionDistance>
+  <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
+  <toolChangeRetractionSpeed>1200</toolChangeRetractionSpeed>
+
+  <!-- Advanced Tab
+
+       https://forum.simplify3d.com/viewtopic.php?t=2089
+    -->
   <useMinPrintHeight>0</useMinPrintHeight>
   <minPrintHeight>0</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
   <maxPrintHeight>1.1</maxPrintHeight>
-  <useDiaphragm>0</useDiaphragm>
-  <diaphragmLayerInterval>20</diaphragmLayerInterval>
-  <robustSlicing>1</robustSlicing>
-  <mergeAllIntoSolid>0</mergeAllIntoSolid>
+
+  <externalThinWallType>0</externalThinWallType>
+  <internalThinWallType>2</internalThinWallType>
+  <thinWallAllowedOverlapPercentage>10</thinWallAllowedOverlapPercentage>
+
+  <singleExtrusionMinLength>1</singleExtrusionMinLength>
+  <singleExtrusionMinPrintingWidthPercentage>50</singleExtrusionMinPrintingWidthPercentage>
+  <singleExtrusionMaxPrintingWidthPercentage>200</singleExtrusionMaxPrintingWidthPercentage>
+  <singleExtrusionEndpointExtension>0.2</singleExtrusionEndpointExtension>
+
   <onlyRetractWhenCrossingOutline>1</onlyRetractWhenCrossingOutline>
   <retractBetweenLayers>1</retractBetweenLayers>
   <useRetractionMinTravel>0</useRetractionMinTravel>
   <retractionMinTravel>3</retractionMinTravel>
   <retractWhileWiping>0</retractWhileWiping>
   <onlyWipeOutlines>1</onlyWipeOutlines>
+
   <avoidCrossingOutline>0</avoidCrossingOutline>
   <maxMovementDetourFactor>3</maxMovementDetourFactor>
-  <toolChangeRetractionDistance>16</toolChangeRetractionDistance>
-  <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
-  <toolChangeRetractionSpeed>1200</toolChangeRetractionSpeed>
-  <externalThinWallType>0</externalThinWallType>
-  <internalThinWallType>2</internalThinWallType>
-  <thinWallAllowedOverlapPercentage>10</thinWallAllowedOverlapPercentage>
-  <singleExtrusionMinLength>1</singleExtrusionMinLength>
-  <singleExtrusionMinPrintingWidthPercentage>50</singleExtrusionMinPrintingWidthPercentage>
-  <singleExtrusionMaxPrintingWidthPercentage>200</singleExtrusionMaxPrintingWidthPercentage>
-  <singleExtrusionEndpointExtension>0.2</singleExtrusionEndpointExtension>
-  <horizontalSizeCompensation>0</horizontalSizeCompensation>
+  
+  <robustSlicing>1</robustSlicing>
+  <mergeAllIntoSolid>0</mergeAllIntoSolid>
 </profile>
