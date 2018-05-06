@@ -192,8 +192,10 @@
   <!-- SingleExtruder v2.1 with a 0.5mm Nozzle -->
   <autoConfigureExtruders name="0.5mm" allowedToolheads="1">
     <primaryExtruder>0</primaryExtruder>
+    <skirtExtruder>999</skirtExtruder>
     <raftExtruder>0</raftExtruder>
-    <skirtExtruder>0</skirtExtruder>
+    <primePillarExtruder>999</primePillarExtruder>
+    <oozeShieldExtruder>999</oozeShieldExtruder>
     <infillExtruder>0</infillExtruder>
     <supportExtruder>0</supportExtruder>
     <denseSupportExtruder>0</denseSupportExtruder>
@@ -219,8 +221,10 @@
   <!-- SingleExtruder v2.1 with a 0.35mm Nozzle -->
   <autoConfigureExtruders name="0.35mm" allowedToolheads="1">
     <primaryExtruder>0</primaryExtruder>
+    <skirtExtruder>999</skirtExtruder>
     <raftExtruder>0</raftExtruder>
-    <skirtExtruder>0</skirtExtruder>
+    <primePillarExtruder>999</primePillarExtruder>
+    <oozeShieldExtruder>999</oozeShieldExtruder>
     <infillExtruder>0</infillExtruder>
     <supportExtruder>0</supportExtruder>
     <denseSupportExtruder>0</denseSupportExtruder>
@@ -311,7 +315,7 @@
          oozeShieldExtruder
     -->
   <useSkirt>1</useSkirt>
-  <skirtExtruder>0</skirtExtruder>
+  <skirtExtruder>999</skirtExtruder>
   <skirtLayers>1</skirtLayers>
   <skirtOffset>4</skirtOffset>
   <skirtOutlines>2</skirtOutlines>
