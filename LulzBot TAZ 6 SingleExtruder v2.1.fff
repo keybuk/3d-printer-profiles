@@ -156,6 +156,7 @@
     <skirtLayers>1</skirtLayers>
     <infillPercentage>15</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
+   <defaultSpeed>5400</defaultSpeed>
   </autoConfigureQuality>
 
   <!-- Print quality balanced between speed and detail -->
@@ -166,6 +167,7 @@
     <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>30</supportInfillPercentage>
+    <defaultSpeed>3600</defaultSpeed>
   </autoConfigureQuality>
   
   <autoConfigureQuality name="High">
@@ -175,6 +177,7 @@
     <skirtLayers>2</skirtLayers>
     <infillPercentage>30</infillPercentage>
     <supportInfillPercentage>40</supportInfillPercentage>
+    <defaultSpeed>2400</defaultSpeed>
   </autoConfigureQuality>
 
   <!-- Extruder Profiles
