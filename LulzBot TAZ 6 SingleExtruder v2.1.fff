@@ -347,7 +347,7 @@
 
        https://forum.simplify3d.com/viewtopic.php?t=1953
 
-       Per-material:
+       Per-quality:
          infillPercentage
 
        Per-extruder:
@@ -372,7 +372,7 @@
 
        https://forum.simplify3d.com/viewtopic.php?t=2135
 
-       Per-material:
+       Per-quality:
          supportInfillPercentage
 
        Per-extruder:
