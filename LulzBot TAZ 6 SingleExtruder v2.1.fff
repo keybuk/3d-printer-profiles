@@ -186,7 +186,7 @@
     <skirtLayers>1</skirtLayers>
     <infillPercentage>15</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
-   <defaultSpeed>5400</defaultSpeed>
+    <defaultSpeed>5400</defaultSpeed>
   </autoConfigureQuality>
 
   <!-- Print quality balanced between speed and detail -->
