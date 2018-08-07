@@ -552,7 +552,7 @@
   <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
   <supportUnderspeed>0.8</supportUnderspeed>
   <rapidXYspeed>10500</rapidXYspeed>
-  <rapidZspeed>1002</rapidZspeed>
+  <rapidZspeed>1000</rapidZspeed>
 
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
   <minSpeedLayerTime>15</minSpeedLayerTime>
