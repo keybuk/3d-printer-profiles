@@ -52,6 +52,36 @@
     </fanSpeed>
   </autoConfigureMaterial>
 
+  <!-- eSUN PLA 2.85mm -->
+  <autoConfigureMaterial name="eSUN PLA 2.85mm">
+    <filamentDiameters>2.85|2.85|2.85|2.85|2.85|2.85</filamentDiameters>
+    <filamentPricesPerKg>25|25|25|25|25|25</filamentPricesPerKg>
+
+    <temperatureController name="Primary Extruder">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>0</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="215"/>
+      <setpoint layer="2" temperature="210"/>
+    </temperatureController>
+
+    <temperatureController name="Heated Bed">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>1</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="60"/>
+    </temperatureController>
+
+    <fanSpeed>
+      <setpoint layer="1" speed="0"/>
+      <setpoint layer="2" speed="100"/>
+    </fanSpeed>
+  </autoConfigureMaterial>
+
   <!-- Village Plastics ABS 2.85mm -->
   <autoConfigureMaterial name="Village Plastics ABS 2.85mm">
     <filamentDiameters>2.85|2.85|2.85|2.85|2.85|2.85</filamentDiameters>
