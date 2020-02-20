@@ -141,6 +141,36 @@
     </fanSpeed>
   </autoConfigureMaterial>
 
+  <!-- HatchBox PLA 1.75m (Wood) -->
+  <autoConfigureMaterial name="HatchBox PLA 1.75mm (Wood)">
+    <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
+    <filamentPricesPerKg>22.99|22.99|22.99|22.99|22.99|22.99</filamentPricesPerKg>
+
+    <temperatureController name="Primary Extruder">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>0</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="195"/>
+      <setpoint layer="2" temperature="190"/>
+    </temperatureController>
+
+    <temperatureController name="Heated Bed">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>1</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="60"/>
+    </temperatureController>
+
+    <fanSpeed>
+      <setpoint layer="1" speed="0"/>
+      <setpoint layer="2" speed="100"/>
+    </fanSpeed>
+  </autoConfigureMaterial>
+
   <!-- HatchBox ABS 1.75mm -->
   <autoConfigureMaterial name="HatchBox ABS 1.75mm">
     <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
