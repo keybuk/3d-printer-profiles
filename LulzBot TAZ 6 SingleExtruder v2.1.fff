@@ -653,7 +653,13 @@ M117 Print complete</endingGcode>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   
-  <postProcessing>{REPLACE &quot;[extruder0_soften_temperature]&quot; &quot;185&quot;},{REPLACE &quot;[extruder0_wipe_temperature]&quot; &quot;170&quot;},{REPLACE &quot;[extruder0_probe_temperature]&quot; &quot;170&quot;},{REPLACE &quot;[bed0_removal_temperature]&quot; &quot;45&quot;},{REPLACE &quot;[bed0_keep_temperature]&quot; &quot;45&quot;}</postProcessing>
+  <postProcessing>; LulzBot TAZ 6 with SingleExtruder v2.1
+{REPLACE &quot;[extruder0_soften_temperature]&quot; &quot;185&quot;}
+{REPLACE &quot;[extruder0_wipe_temperature]&quot; &quot;170&quot;}
+{REPLACE &quot;[extruder0_probe_temperature]&quot; &quot;170&quot;}
+{REPLACE &quot;[bed0_removal_temperature]&quot; &quot;45&quot;}
+{REPLACE &quot;[bed0_keep_temperature]&quot; &quot;45&quot;}
+</postProcessing>
 
   <!-- Speeds Tab
 
