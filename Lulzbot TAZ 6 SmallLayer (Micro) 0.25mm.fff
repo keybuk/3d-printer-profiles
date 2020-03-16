@@ -7,7 +7,7 @@
   <baseProfile>LulzBot TAZ 6 SmallLayer (Micro) 0.25mm</baseProfile>
   <printMaterial>PolyLite PLA 2.85mm</printMaterial>
   <printQuality>High</printQuality>
-  <printExtruders>0.25mm</printExtruders>
+  <printExtruders></printExtruders>
 
   <!-- Print bed model -->
   <overridePrinterModels>1</overridePrinterModels>
@@ -139,50 +139,9 @@
     <defaultSpeed>1200</defaultSpeed>
   </autoConfigureQuality>
 
-  <!-- Extruder Profiles
-
-       Selecting an extruder profile overrides each of the values specified
-       within it, but only those. It's thus important that all extruders
-       specify all of the same values.
-
-       In the tab sections below, per-extruder are taken from the
-       current printExtruder.
-    -->
-  <!-- SmallLayer (Micro) 0.25mm Nozzle -->
-  <autoConfigureExtruders name="0.25mm" allowedToolheads="1">
-    <primaryExtruder>0</primaryExtruder>
-    <skirtExtruder>999</skirtExtruder>
-    <raftExtruder>0</raftExtruder>
-    <primePillarExtruder>999</primePillarExtruder>
-    <oozeShieldExtruder>999</oozeShieldExtruder>
-    <infillExtruder>0</infillExtruder>
-    <supportExtruder>0</supportExtruder>
-    <denseSupportExtruder>0</denseSupportExtruder>
-
-    <extruder name="Primary Extruder">
-      <toolheadNumber>0</toolheadNumber>
-      <diameter>0.25</diameter>
-      <autoWidth>0</autoWidth>
-      <width>0.25</width>
-      <extrusionMultiplier>1.00</extrusionMultiplier>
-      <useRetract>1</useRetract>
-      <retractionDistance>1.00</retractionDistance>
-      <extraRestartDistance>0</extraRestartDistance>
-      <retractionZLift>0</retractionZLift>
-      <retractionSpeed>420</retractionSpeed>
-      <useCoasting>0</useCoasting>
-      <coastingDistance>0.2</coastingDistance>
-      <useWipe>0</useWipe>
-      <wipeDistance>5</wipeDistance>
-    </extruder>
-  </autoConfigureExtruders>
-
   <!-- Extruder Tab
 
        https://forum.simplify3d.com/viewtopic.php?t=1980
-
-       Per-extruder:
-         extruder
     -->
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
@@ -210,9 +169,6 @@
          topSolidLayers
          bottomSolidLayers
          perimeterOutlines
-
-       Per-extruder:
-         primaryExtruder
     -->
   <primaryExtruder>0</primaryExtruder>
   <layerHeight>0.1</layerHeight>
@@ -237,12 +193,6 @@
 
        Per-quality:
          skirtLayers
-
-       Per-extruder:
-         raftExtruder
-         skirtExtruder
-         primePillarExtruder
-         oozeShieldExtruder
     -->
   <useSkirt>1</useSkirt>
   <skirtExtruder>999</skirtExtruder>
@@ -279,9 +229,6 @@
 
        Per-quality:
          infillPercentage
-
-       Per-extruder:
-         infillExtruder
     -->
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Rectilinear</internalInfillPattern>
@@ -304,10 +251,6 @@
 
        Per-quality:
          supportInfillPercentage
-
-       Per-extruder:
-         supportExtruder
-         denseSupportExtruder
     -->
   <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
