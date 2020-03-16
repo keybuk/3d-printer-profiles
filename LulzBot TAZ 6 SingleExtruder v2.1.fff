@@ -560,6 +560,8 @@
     -->
   <startingGcode>; LulzBot TAZ 6 with SingleExtruder v2.1
 ; Initialization and Homing
+M73 P0  ; clear progress bar
+M75  ; start progress timer
 G26  ; clear potential 'probe fail' condition
 G21  ; set units to Millimetres
 M107  ; disable fans
@@ -580,6 +582,7 @@ G28 Z  ; home Z
 ;
 ; Wiping (filament already softened above)
 ;
+M117 Wiping...
 M109 R[extruder0_wipe_temperature]  ; wait for extruder to reach wiping temp
 G1 X-15 Y100 F3000  ; move above wiper pad
 G1 Z1  ; push nozzle into wiper
@@ -610,6 +613,7 @@ G1 Z10  ; raise extruder
 ;
 ; Auto-leveling
 ;
+M117 Leveling...
 M109 R[extruder0_probe_temperature]  ; wait for extruder to reach probe temp
 G1 X-9 Y-9  ; move above first probe point
 M204 S100  ; set probing acceleration
@@ -645,7 +649,8 @@ G90  ; absolute positioning
 G1 Y0 F3000  ; move to cooling position
 M190 R[bed0_removal_temperature]  ; wait for bed to cool down to removal temp
 G1 Y280 F3000  ; present finished print
-M140 S[bed0_keep_temperature]  ; keep temperature or cool downs
+M140 S[bed0_keep_temperature]  ; keep temperature or cool down
+M77  ; stop LCD timer
 M84  ; disable steppers
 G90  ; absolute positioning
 M117 Print complete
