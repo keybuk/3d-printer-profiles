@@ -564,9 +564,11 @@ M73 P0  ; clear progress bar
 M75  ; start progress timer
 G26  ; clear potential 'probe fail' condition
 G21  ; set units to Millimetres
+M420 S0  ; disable previous leveling matrix
 M107  ; disable fans
 G90  ; absolute positioning
 T0  ; make sure we're on the first extruder
+M117 Homing...
 M104 S[extruder0_soften_temperature]  ; soften filament
 M140 S[bed0_temperature]  ; start bed heating up
 G28 XY  ; home X and Y
@@ -618,6 +620,7 @@ M109 R[extruder0_probe_temperature]  ; wait for extruder to reach probe temp
 G1 X-9 Y-9  ; move above first probe point
 M204 S100  ; set probing acceleration
 G29  ; start auto-leveling sequence
+M420 S1  ; activate bed level matrix
 M204 S500  ; restore standard acceleration
 ;
 ; Prepare for printing
@@ -629,7 +632,7 @@ M190 S[bed0_temperature]  ; wait for bed to reach printing temp
 M109 R[extruder0_temperature]  ; wait for extruder to reach printing temp
 M106 S[fan_speed_pwm]  ; set the fan to first layer speed
 G1 E0 F100  ; undo earlier retraction
-M400  ; clear buffer
+M400  ; wait for moves to finish
 M117 TAZ 6 Printing
 </startingGcode>
   <layerChangeGcode></layerChangeGcode>
