@@ -568,6 +568,8 @@ M420 S0  ; disable previous leveling matrix
 M107  ; disable fans
 G90  ; absolute positioning
 T0  ; make sure we're on the first extruder
+M82  ; set extruder to absolute mode
+G92 E0  ; set extruder to zero
 M117 Homing...
 M104 S[extruder0_soften_temperature]  ; soften filament
 M140 S[bed0_temperature]  ; start bed heating up
@@ -577,8 +579,6 @@ G1 Y258 F3000  ; move over the Z_MIN switch
 G1 X-19 F3000  ; move left as far as possible
 M117 Heating...
 M109 R[extruder0_soften_temperature]  ; wait for soften temp
-M82  ; set extruder to absolute mode
-G92 E0  ; set extruder to zero
 G1 E-12 F100  ; retract filament
 G28 Z  ; home Z
 ;
