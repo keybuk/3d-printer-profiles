@@ -579,7 +579,7 @@ G1 Y258 F3000  ; move over the Z_MIN switch
 G1 X-19 F3000  ; move left as far as possible
 M117 Heating...
 M109 R[extruder0_soften_temperature]  ; wait for soften temp
-G1 E-12 F100  ; retract filament
+G1 E-30 F100  ; retract filament
 G28 Z  ; home Z
 ;
 ; Wiping (filament already softened above)
