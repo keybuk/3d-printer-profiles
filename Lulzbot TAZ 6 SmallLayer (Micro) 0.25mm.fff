@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<!-- Simplify3D FFF profile for LulzBot TAZ 6 with SingleExtruder v2.1 tool head.
+<!-- Simplify3D FFF profile for LulzBot TAZ 6 with SmallLayer (Micro) 0.25mm tool head.
 
      https://forum.simplify3d.com/viewtopic.php?f=8&t=9893
   -->
-<profile name="LulzBot TAZ 6 SingleExtruder v2.1" version="2018-08-16 13:56:54" app="S3D-Software 4.1.2">
-  <baseProfile>LulzBot TAZ 6 SingleExtruder v2.1</baseProfile>
+<profile name="LulzBot TAZ 6 SmallLayer (Micro) 0.25mm" version="2018-08-16 13:56:54" app="S3D-Software 4.1.2">
+  <baseProfile>LulzBot TAZ 6 SmallLayer (Micro) 0.25mm</baseProfile>
   <printMaterial>PolyLite PLA 2.85mm</printMaterial>
-  <printQuality>Medium</printQuality>
-  <printExtruders>0.5mm</printExtruders>
+  <printQuality>High</printQuality>
+  <printExtruders>0.25mm</printExtruders>
 
   <!-- Print bed model -->
   <overridePrinterModels>1</overridePrinterModels>
@@ -99,83 +99,6 @@
     </fanSpeed>
   </autoConfigureMaterial>
 
-  <!-- HatchBox PLA 1.75mm -->
-  <autoConfigureMaterial name="HatchBox PLA 1.75mm">
-    <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
-    <filamentPricesPerKg>22.99|22.99|22.99|22.99|22.99|22.99</filamentPricesPerKg>
-
-    <temperatureController name="Primary Extruder">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>0</isHeatedBed>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="200"/>
-      <setpoint layer="2" temperature="195"/>
-    </temperatureController>
-
-    <temperatureController name="Heated Bed">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>1</isHeatedBed>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="60"/>
-    </temperatureController>
-
-    <fanSpeed>
-      <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="100"/>
-    </fanSpeed>
-  </autoConfigureMaterial>
-
-  <!-- HatchBox PLA 1.75m (Wood) -->
-  <autoConfigureMaterial name="HatchBox PLA 1.75mm (Wood)">
-    <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
-    <filamentPricesPerKg>22.99|22.99|22.99|22.99|22.99|22.99</filamentPricesPerKg>
-
-    <temperatureController name="Primary Extruder">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>0</isHeatedBed>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="195"/>
-      <setpoint layer="2" temperature="190"/>
-    </temperatureController>
-
-    <temperatureController name="Heated Bed">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>1</isHeatedBed>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="60"/>
-    </temperatureController>
-
-    <fanSpeed>
-      <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="100"/>
-    </fanSpeed>
-  </autoConfigureMaterial>
-
-  <!-- HatchBox ABS 1.75mm -->
-  <autoConfigureMaterial name="HatchBox ABS 1.75mm">
-    <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
-    <filamentPricesPerKg>21.99|21.99|21.99|21.99|21.99|21.99</filamentPricesPerKg>
-
-    <temperatureController name="Primary Extruder">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>0</isHeatedBed>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="240"/>
-      <setpoint layer="4" temperature="230"/>
-    </temperatureController>
-
-    <temperatureController name="Heated Bed">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>1</isHeatedBed>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="110"/>
-    </temperatureController>
-
-    <fanSpeed>
-      <setpoint layer="1" speed="0"/>
-    </fanSpeed>
-  </autoConfigureMaterial>
-
   <!-- Quality Profiles
 
        Selecting a quality profile overrides each of the values specified
@@ -213,13 +136,10 @@
     <skirtLayers>2</skirtLayers>
     <infillPercentage>30</infillPercentage>
     <supportInfillPercentage>40</supportInfillPercentage>
-    <defaultSpeed>2400</defaultSpeed>
+    <defaultSpeed>1200</defaultSpeed>
   </autoConfigureQuality>
 
   <!-- Extruder Profiles
-
-       Since I have both a 0.5mm and 0.35mm nozzle, use the extruder profiles
-       to select between them.
 
        Selecting an extruder profile overrides each of the values specified
        within it, but only those. It's thus important that all extruders
@@ -228,8 +148,8 @@
        In the tab sections below, per-extruder are taken from the
        current printExtruder.
     -->
-  <!-- SingleExtruder v2.1 with a 0.5mm Nozzle -->
-  <autoConfigureExtruders name="0.5mm" allowedToolheads="1">
+  <!-- SmallLayer (Micro) 0.25mm Nozzle -->
+  <autoConfigureExtruders name="0.25mm" allowedToolheads="1">
     <primaryExtruder>0</primaryExtruder>
     <skirtExtruder>999</skirtExtruder>
     <raftExtruder>0</raftExtruder>
@@ -241,44 +161,15 @@
 
     <extruder name="Primary Extruder">
       <toolheadNumber>0</toolheadNumber>
-      <diameter>0.5</diameter>
+      <diameter>0.25</diameter>
       <autoWidth>0</autoWidth>
-      <width>0.5</width>
-      <extrusionMultiplier>0.86</extrusionMultiplier>
+      <width>0.25</width>
+      <extrusionMultiplier>1.00</extrusionMultiplier>
       <useRetract>1</useRetract>
-      <retractionDistance>1.75</retractionDistance>
+      <retractionDistance>1.00</retractionDistance>
       <extraRestartDistance>0</extraRestartDistance>
       <retractionZLift>0</retractionZLift>
-      <retractionSpeed>1800</retractionSpeed>
-      <useCoasting>0</useCoasting>
-      <coastingDistance>0.2</coastingDistance>
-      <useWipe>0</useWipe>
-      <wipeDistance>5</wipeDistance>
-    </extruder>
-  </autoConfigureExtruders>
-
-  <!-- SingleExtruder v2.1 with a 0.35mm Nozzle -->
-  <autoConfigureExtruders name="0.35mm" allowedToolheads="1">
-    <primaryExtruder>0</primaryExtruder>
-    <skirtExtruder>999</skirtExtruder>
-    <raftExtruder>0</raftExtruder>
-    <primePillarExtruder>999</primePillarExtruder>
-    <oozeShieldExtruder>999</oozeShieldExtruder>
-    <infillExtruder>0</infillExtruder>
-    <supportExtruder>0</supportExtruder>
-    <denseSupportExtruder>0</denseSupportExtruder>
-
-    <extruder name="Primary Extruder">
-      <toolheadNumber>0</toolheadNumber>
-      <diameter>0.35</diameter>
-      <autoWidth>0</autoWidth>
-      <width>0.35</width>
-      <extrusionMultiplier>1.0</extrusionMultiplier>
-      <useRetract>1</useRetract>
-      <retractionDistance>1.75</retractionDistance>
-      <extraRestartDistance>0</extraRestartDistance>
-      <retractionZLift>0</retractionZLift>
-      <retractionSpeed>1800</retractionSpeed>
+      <retractionSpeed>420</retractionSpeed>
       <useCoasting>0</useCoasting>
       <coastingDistance>0.2</coastingDistance>
       <useWipe>0</useWipe>
@@ -295,15 +186,15 @@
     -->
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
-    <diameter>0.5</diameter>
+    <diameter>0.25</diameter>
     <autoWidth>0</autoWidth>
-    <width>0.5</width>
-    <extrusionMultiplier>0.86</extrusionMultiplier>
+    <width>0.25</width>
+    <extrusionMultiplier>1.00</extrusionMultiplier>
     <useRetract>1</useRetract>
-    <retractionDistance>1.75</retractionDistance>
+    <retractionDistance>1.00</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
     <retractionZLift>0</retractionZLift>
-    <retractionSpeed>1800</retractionSpeed>
+    <retractionSpeed>420</retractionSpeed>
     <useCoasting>0</useCoasting>
     <coastingDistance>0.2</coastingDistance>
     <useWipe>0</useWipe>
@@ -324,7 +215,7 @@
          primaryExtruder
     -->
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.25</layerHeight>
+  <layerHeight>0.1</layerHeight>
   <topSolidLayers>4</topSolidLayers>
   <bottomSolidLayers>4</bottomSolidLayers>
   <perimeterOutlines>2</perimeterOutlines>
@@ -355,7 +246,7 @@
     -->
   <useSkirt>1</useSkirt>
   <skirtExtruder>999</skirtExtruder>
-  <skirtLayers>1</skirtLayers>
+  <skirtLayers>2</skirtLayers>
   <skirtOffset>4</skirtOffset>
   <skirtOutlines>2</skirtOutlines>
 
@@ -395,7 +286,7 @@
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Rectilinear</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
-  <infillPercentage>20</infillPercentage>
+  <infillPercentage>30</infillPercentage>
   <outlineOverlapPercentage>15</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>200</infillExtrusionWidthPercentage>
   <minInfillLength>5</minInfillLength>
@@ -420,7 +311,7 @@
     -->
   <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
-  <supportInfillPercentage>30</supportInfillPercentage>
+  <supportInfillPercentage>40</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
   <supportBaseLayers>0</supportBaseLayers>
   <supportLayerInterval>1</supportLayerInterval>
@@ -530,7 +421,7 @@
        Per-material:
          postProcessing
     -->
-  <startingGcode>; LulzBot TAZ 6 with SingleExtruder v2.1
+  <startingGcode>; LulzBot TAZ 6 with SmallLayer (Micro) 0.25mm
 ; Initialization and Homing
 M73 P0  ; clear progress bar
 M75  ; start progress timer
@@ -610,7 +501,7 @@ M117 TAZ 6 Printing
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
-  <endingGcode>; LulzBot TAZ 6 with SingleExtruder v2.1
+  <endingGcode>; LulzBot TAZ 6 with SmallLayer (Micro) 0.25mm
 M400  ; wait for moves to finish
 M140 S[bed0_removal_temperature]  ; start bed cooling to part removal temperature
 M104 S0  ; hotend off
@@ -635,7 +526,7 @@ M117 Print complete
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   
-  <postProcessing>; LulzBot TAZ 6 with SingleExtruder v2.1
+  <postProcessing>; LulzBot TAZ 6 with SmallLayer (Micro) 0.25mm
 {REPLACE &quot;[extruder0_soften_temperature]&quot; &quot;185&quot;}
 {REPLACE &quot;[extruder0_wipe_temperature]&quot; &quot;170&quot;}
 {REPLACE &quot;[extruder0_probe_temperature]&quot; &quot;170&quot;}
@@ -650,7 +541,7 @@ M117 Print complete
        Per-quality:
          defaultSpeed
     -->
-  <defaultSpeed>3600</defaultSpeed>
+  <defaultSpeed>1200</defaultSpeed>
   <outlineUnderspeed>0.5</outlineUnderspeed>
   <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
   <supportUnderspeed>0.8</supportUnderspeed>
