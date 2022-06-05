@@ -205,7 +205,7 @@
     <supportInfillPercentage>30</supportInfillPercentage>
     <defaultSpeed>3600</defaultSpeed>
   </autoConfigureQuality>
-  
+
   <autoConfigureQuality name="High">
     <layerHeight>0.1</layerHeight>
     <topSolidLayers>4</topSolidLayers>
@@ -496,7 +496,7 @@
   <gcodeXoffset>0</gcodeXoffset>
   <gcodeYoffset>0</gcodeYoffset>
   <gcodeZoffset>0</gcodeZoffset>
-  
+
   <overrideMachineDefinition>1</overrideMachineDefinition>
   <machineTypeOverride>0</machineTypeOverride>
   <strokeXoverride>280</strokeXoverride>
@@ -519,7 +519,7 @@
   <baudRateOverride>250000</baudRateOverride>
 
   <!-- Scripts Tab
-  
+
        https://forum.simplify3d.com/viewtopic.php?t=1959
 
        The start and end gcode are intended to apply to all materials and
@@ -545,54 +545,22 @@ G92 E0  ; set extruder to zero
 M117 Homing...
 M104 S[extruder0_soften_temperature]  ; soften filament
 M140 S[bed0_temperature]  ; start bed heating up
-G28 XY  ; home X and Y
-G1 X-17 F3000  ; clear X endstop
-G1 Y258 F3000  ; move over the Z_MIN switch
-G1 X-19 F3000  ; move left as far as possible
-M117 Heating...
-M109 R[extruder0_soften_temperature]  ; wait for soften temp
-G1 E-30 F100  ; retract filament
-G28 Z  ; home Z
-;
-; Wiping (filament already softened above)
-;
+G28  ; home all axes
 M117 Wiping...
+G1 E-30 F100  ; retract filament
 M109 R[extruder0_wipe_temperature]  ; wait for extruder to reach wiping temp
-G1 X-15 Y100 F3000  ; move above wiper pad
-G1 Z1  ; push nozzle into wiper
-G1 X-17 Y95 F1000  ; slow wipe
-G1 X-17 Y90 F1000  ; slow wipe
-G1 X-17 Y85 F1000  ; slow wipe
-G1 X-15 Y90 F1000  ; slow wipe
-G1 X-17 Y80 F1000  ; slow wipe
-G1 X-15 Y95 F1000  ; slow wipe
-G1 X-17 Y75 F2000  ; fast wipe
-G1 X-15 Y65 F2000  ; fast wipe
-G1 X-17 Y70 F2000  ; fast wipe
-G1 X-15 Y60 F2000  ; fast wipe
-G1 X-17 Y55 F2000  ; fast wipe
-G1 X-15 Y50 F2000  ; fast wipe
-G1 X-17 Y40 F2000  ; fast wipe
-G1 X-15 Y45 F2000  ; fast wipe
-G1 X-17 Y35 F2000  ; fast wipe
-G1 X-15 Y40 F2000  ; fast wipe
-G1 X-17 Y70 F2000  ; fast wipe
-G1 X-15 Y30 Z2 F2000  ; fast wipe
-G1 X-17 Y35 F2000  ; fast wipe
-G1 X-15 Y25 F2000  ; fast wipe
-G1 X-17 Y30 F2000  ; fast wipe
-G1 X-15 Y25 Z1.5 F1000  ; slow wipe
-G1 X-17 Y23 F1000  ; slow wipe
-G1 Z10  ; raise extruder
+G12  ; wiping sequence
+M206 X0 Y4 Z0  ; reseting stock nozzle position ### CAUTION: changing this line can affect print quality ###
 ;
 ; Auto-leveling
 ;
 M117 Leveling...
 M109 R[extruder0_probe_temperature]  ; wait for extruder to reach probe temp
-G1 X-9 Y-9  ; move above first probe point
+G1 X-10 Y293 F4000 ; move above first probe point
 M204 S100  ; set probing acceleration
 G29  ; start auto-leveling sequence
 M420 S1  ; activate bed level matrix
+M425 Z   ; use measured Z backlash for compensation
 M204 S500  ; restore standard acceleration
 ;
 ; Prepare for printing
@@ -634,7 +602,7 @@ M117 Print complete
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
-  
+
   <postProcessing>; LulzBot TAZ 6 with SingleExtruder v2.1
 {REPLACE &quot;[extruder0_soften_temperature]&quot; &quot;185&quot;}
 {REPLACE &quot;[extruder0_wipe_temperature]&quot; &quot;170&quot;}
@@ -715,7 +683,7 @@ M117 Print complete
 
   <avoidCrossingOutline>0</avoidCrossingOutline>
   <maxMovementDetourFactor>3</maxMovementDetourFactor>
-  
+
   <robustSlicing>1</robustSlicing>
   <mergeAllIntoSolid>0</mergeAllIntoSolid>
 </profile>
